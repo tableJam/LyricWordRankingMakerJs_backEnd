@@ -1,0 +1,19 @@
+{
+  "name": "songword",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "content-type-parser": "^1.0.2",
+    "html-encoding-sniffer": "^3.0.0",
+    "jsdom": "^20.0.0",
+    "puppeteer": "^16.2.0",
+    "react": "^18.2.0",
+    "request": "^2.88.2"
+  }
+}
