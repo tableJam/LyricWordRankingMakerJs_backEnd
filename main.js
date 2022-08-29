@@ -67,9 +67,9 @@ async function start(){
   let songs = await getSong();
   let answer = []
   
- for await(let s of songs){
+ for await(let song_link of songs){
   if(answer.filter(e=>e).length > 10000)break;
-  answer.push(...await getLyric(s));
+  answer.push(...await getLyric(song_link));
  }
  fs.writeFileSync('lyrics.txt',JSON.stringify(answer),'utf-8');
  console.log('done');
