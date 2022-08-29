@@ -5,7 +5,7 @@ const browser = puppeteer.launch();
 const fs = require('fs');
 let artistName = process.argv[2];
 let url = `https://www.lyrics.com/artist/${artistName}`
-console.log(url)
+
 const wait = () =>  new Promise(resolve=>{  setTimeout(()=>{resolve()},2000)  })
 
 let collectedSongs = []
@@ -27,12 +27,11 @@ async function parse(url,logic){
   }
 }
 
-//remove already used song ;
+//remove song already used;
 function remove(url){
   let songName = url.slice(52);
   songName = songName.toLowerCase()
   if(collectedSongs.includes(songName)){
-    console.log(songName,'0000000')
     return true
   }else{
     collectedSongs.push(songName);
@@ -44,7 +43,6 @@ function remove(url){
 const getSong = async () =>{
   const logic = (document) =>{
     let songs = [...document.querySelectorAll('.tal.qx a')].map(el=>el.href);
-    console.log('page')
     return songs
   }
   return await parse(url,logic);
@@ -68,7 +66,7 @@ const getLyric = async (url) =>{
 async function start(){
   let songs = await getSong();
   let answer = []
-  console.log('hello',songs)
+  
  for await(let s of songs){
   if(answer.filter(e=>e).length > 10000)break;
   answer.push(...await getLyric(s));
