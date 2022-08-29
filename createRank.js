@@ -14,9 +14,9 @@ data.filter(e=>e).forEach((word,i) => {
 
 TOP10 = TOP10.sort((a,b)=>a.count-b.count);
 
-let size = 230;
+let font_size = 230;
 TOP10 = TOP10.map(el=>{
-  el =  {...el,size};
+  el =  {...el,font_size};
   size -= 20;
   return el;
 })
@@ -28,8 +28,7 @@ TOP10.forEach((el,i,array)=>{
   console.log('             ')
   console.log(`🎊   ${el.word}`)
   console.log('             ')
-
-  console.log(`🎙  ${el.count} times             `)
+  console.log(`🎙  ${el.count} times `)
   console.log('             ')
 
 
