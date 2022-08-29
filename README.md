@@ -1,4 +1,4 @@
-# 🎙LyricWordRankingMakerJs🚀
+# 🎙LyricWordRankingMakerJs_backend🚀
 アーティストが楽曲内で使った単語を,出現回数をもとにランク付けするプログラムです。
 
 # 💥warning💥
