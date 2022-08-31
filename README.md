@@ -4,4 +4,4 @@
 # 💥warning💥
 英語の歌詞しか対応できません。
 アーティスト名を入力する際は、名-姓 の形式で入力してください。
-ex: 「Billie Eilish」の場合は「Billie-Eilish」
+ex: http://localhost:3000/Billie-Eilish
