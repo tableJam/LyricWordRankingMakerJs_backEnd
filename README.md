@@ -11,5 +11,3 @@ ex: 「Billie Eilish」の場合は「Billie-Eilish」
 
 node main アーティスト名 -> 開始；
 node createRank -> ランキングを作成;
-
-reactでフロントエンドも作ります
