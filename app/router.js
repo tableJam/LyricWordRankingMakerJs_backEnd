@@ -8,7 +8,8 @@ router.get('/',(req,res)=>{
 })
 router.post('/:name', async (req,res)=>{
   let data = await start(req.params.name);
-  res.status(200).json(data);
+  let ranking = createRank(data);
+  res.status(200).json(ranking);
 });
 
 
