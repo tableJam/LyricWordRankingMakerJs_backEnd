@@ -17,7 +17,7 @@ TOP10 = TOP10.sort((a,b)=>a.count-b.count);
 let font_size = 230;
 TOP10 = TOP10.map(el=>{
   el =  {...el,font_size};
-  size -= 20;
+  font_size -= 20;
   return el;
 })
 
