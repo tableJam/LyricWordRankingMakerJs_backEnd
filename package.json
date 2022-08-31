@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.0",
     "content-type-parser": "^1.0.2",
+    "express": "^4.18.1",
     "html-encoding-sniffer": "^3.0.0",
     "jsdom": "^20.0.0",
     "puppeteer": "^16.2.0",
