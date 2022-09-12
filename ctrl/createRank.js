@@ -15,11 +15,10 @@ function createRank(data){
 
   let size = 230;
   TOP10 = TOP10.map(el=>{
-    el =  {...el,size};
     size -= 20;
+    el =  {...el,size};
     return el;
   })
-
   return TOP10;
 }
 

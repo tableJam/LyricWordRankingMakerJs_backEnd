@@ -1,23 +1,14 @@
 
 const {JSDOM} = require('jsdom')
-const puppeteer = require('puppeteer');
-const browser = puppeteer.launch();
 const fs = require('fs');
-let artistName = process.argv[2];
 const wait = () =>  new Promise(resolve=>{  setTimeout(()=>{resolve()},2000)  })
-
+const {fetch} = require('../fetch.js');
 let collectedSongs = []
 
 //goto page by puppeteer
 async function parse(url,logic){
-  console.log(url)
-  let tab = await (await browser).newPage();
-  await tab.setDefaultNavigationTimeout(0); 
-  let res = await tab.goto(url);
+  const document = await fetch(url);
   await wait();
-  const html = await res.text();
-  const jsdom = new JSDOM(html, { url: res.url() });
-  const document = jsdom.window.document;
   try{
    let results = logic(document);
    return results;
@@ -25,6 +16,8 @@ async function parse(url,logic){
     console.log(err)
   }
 }
+
+
 
 //remove already used song ;
 function remove(url){
@@ -39,6 +32,7 @@ function remove(url){
   }
 }
 
+
 //get each song`s link
 const getSong = async (name) =>{
   const logic = (document) =>{
@@ -51,6 +45,8 @@ const getSong = async (name) =>{
   console.log(url,'in')
   return await parse(url,logic);
 }
+
+
 
 //collect word from song of lyrics;
 const getLyric = async (url) =>{
@@ -65,6 +61,8 @@ const getLyric = async (url) =>{
   console.log(lyric,'lir');
   return lyric;
 } 
+
+
 
 
 //getSong()-->getLyric()-->answer[]-->csv-->createRank;
